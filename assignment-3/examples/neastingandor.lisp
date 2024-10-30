@@ -1,0 +1,1 @@
+(and (or 10 false) (and true 19))

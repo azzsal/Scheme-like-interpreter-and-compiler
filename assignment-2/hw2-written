@@ -1,0 +1,4 @@
+1. Num (Char.code c)
+2. [ Shr (Reg Rax, Imm (char_shift - num_shift))
+   ; Or (Reg Rax, Imm num_tag)
+   ]

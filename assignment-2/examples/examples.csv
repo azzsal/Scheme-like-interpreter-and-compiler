@@ -1,0 +1,4 @@
+(char? 100), false
+(char? #\9), true 
+(char? #\a), true
+(num->char (add1 (char->num #\A))), #\B

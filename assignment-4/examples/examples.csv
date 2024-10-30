@@ -1,0 +1,23 @@
+(list? 1), false
+(list? (pair 1 2)), false
+(list? ()), true
+(list? (pair 1 ())), true
+(list? (pair 1 (pair 2 (pair 3 ())))), true 
+(list? (pair (pair 1 2) ())), true
+(list? (pair () ())), true
+(vector 3 (+ 2 2)), [4 4 4]
+(vector 5 (vector 1 1)), [[1] [1] [1] [1] [1]]
+(vector -1 5), ERROR
+(vector? (vector 5 1)), true 
+(vector? (pair 7 14)), false 
+(vector-length (vector 10 2)), 10
+(vector-length (pair 1 4)), ERROR
+(vector-get (vector 10 2) 0), 2
+(let ((v (vector 20 10))) (vector-get v 3)), 10
+(vector-get (pair 1 5) 0), ERROR
+(vector-get (vector 10 2) 10), ERROR
+(vector-set (vector 3 5) 0 4), [4 5 5]
+(let ((v (vector 5 5))) (do (vector-set v 0 1) (vector-set v 1 2) (vector-set v 2 3) (vector-set v 3 4))), [1 2 3 4 5]
+(let ((v (vector 5 5))) (let ((out (vector 2 v))) (do (vector-set out 0 (vector-set v 0 50)) out))), [[50 5 5 5 5] [50 5 5 5 5]]
+(vector-set (pair 1 2) 0 10), ERROR
+(vector-set (vector 2 1) 2 19), ERROR
